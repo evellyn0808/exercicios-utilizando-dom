@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista dinâmica</title>
+</head>
+<body>
+
+  <ul id="lista"></ul>
+
+  <button onclick="adicionarItem()">Adicionar item</button>
+
+  <script>
+    function adicionarItem() {
+      // cria o elemento <li>
+      const novoItem = document.createElement("li");
+     
+      // define o texto
+      novoItem.textContent = "Novo item";
+     
+      // seleciona a lista
+      const lista = document.getElementById("lista");
+     
+      // adiciona o <li> dentro da lista
+      lista.appendChild(novoItem);
+    }
+  </script>
+
+</body>
+</html>

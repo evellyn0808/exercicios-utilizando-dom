@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Mostrar nomes</title>
+</head>
+<body>
+
+  <button id="btnMostrar">Mostrar nomes</button>
+  <ul id="lista"></ul>
+
+  <script>
+    // Array de nomes
+    const nomes = ["Ana", "Bruno", "Carlos", "Daniela", "Eduardo"];
+
+    const botao = document.getElementById("btnMostrar");
+    const lista = document.getElementById("lista");
+
+    botao.addEventListener("click", () => {
+      // Limpa a lista antes (opcional)
+      lista.innerHTML = "";
+
+      // Cria o fragmento
+      const fragmento = document.createDocumentFragment();
+
+      // Percorre o array
+      nomes.forEach(nome => {
+        const li = document.createElement("li");
+        li.textContent = nome;
+
+        // Adiciona ao fragmento
+        fragmento.appendChild(li);
+      });
+
+      // Insere o fragmento na lista
+      lista.appendChild(fragmento);
+    });
+  </script>
+
+</body>
+</html>

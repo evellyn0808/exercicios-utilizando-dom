@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista com Fragment</title>
+</head>
+<body>
+
+  <ul id="lista"></ul>
+
+  <button id="btn">Criar lista</button>
+
+  <script>
+    const botao = document.getElementById("btn");
+    const lista = document.getElementById("lista");
+
+    botao.addEventListener("click", function () {
+      // cria o fragmento
+      const fragmento = document.createDocumentFragment();
+
+      // cria 5 elementos <li>
+      for (let i = 1; i <= 5; i++) {
+        const li = document.createElement("li");
+        li.textContent = "Item " + i;
+
+        // adiciona ao fragmento
+        fragmento.appendChild(li);
+      }
+
+      // adiciona tudo de uma vez na lista
+      lista.appendChild(fragmento);
+    });
+  </script>
+
+</body>
+</html>
